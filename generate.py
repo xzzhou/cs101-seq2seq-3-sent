@@ -15,11 +15,12 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import random
 
-input_lang, output_lang, pairs = prepareData('diag1', 'diag2-4-from-other', False)
+input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3',False)
 
-filename = './savedModel/test_2'
+filename = './savedModel/test_three'
 encoder1 = torch.load(filename + '_encoder1.pth')
 attn_decoder1 = torch.load(filename + '_attn_decoder1.pth')
+attn_decoder3 = torch.load(filename + '_attn_decoder3.pth')
 print('load successfully')
 
 
@@ -34,13 +35,18 @@ print('load successfully')
 # attention outputs for display later.
 #
 
-def evaluate(encoder, decoder, sentence, max_length=MAX_LENGTH):
+def evaluate(encoder, decoder, decoder3, sentence, max_length=MAX_LENGTH):
     input_variable = variableFromSentence(input_lang, sentence)
     input_length = input_variable.size()[0]
+    
     encoder_hidden = encoder.initHidden()
 
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+    #new
+    decoder_outputs = Variable(torch.zeros(max_length, decoder.hidden_size))
+    decoder_outputs = decoder_outputs.cuda() if use_cuda else decoder_outputs
+    
 
     for ei in range(input_length):
         encoder_output, encoder_hidden = encoder(input_variable[ei],
@@ -49,15 +55,24 @@ def evaluate(encoder, decoder, sentence, max_length=MAX_LENGTH):
 
     decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+    #new
+    decoder3_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
+    decoder3_input.cuda() if use_cuda else decoder3_input
 
     decoder_hidden = encoder_hidden
 
     decoded_words = []
+    #new
+    decoded3_words = []
+    
     decoder_attentions = torch.zeros(max_length, max_length)
 
     for di in range(max_length):
-        decoder_output, decoder_hidden, decoder_attention = decoder(
+        decoder_output, decoder_output_temp, decoder_hidden, decoder_attention = decoder(
             decoder_input, decoder_hidden, encoder_outputs)
+        #new
+        decoder_outputs[di] = decoder_outputs[di] + decoder_output_temp[0][0]
+        
         decoder_attentions[di] = decoder_attention.data
         topv, topi = decoder_output.data.topk(1)
         ni = topi[0][0]
@@ -69,17 +84,35 @@ def evaluate(encoder, decoder, sentence, max_length=MAX_LENGTH):
 
         decoder_input = Variable(torch.LongTensor([[ni]]))
         decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+    
+    #new
+    decoder3_hidden = decoder_hidden
+    for mi in range(max_length):
+        decoder3_output, decoder3_output_temp, decoder3_hidden, decoder3_attention = decoder3(
+                decoder3_input, decoder3_hidden, decoder_outputs)
+        topv3, topi3 = decoder3_output.data.topk(1)
+        ni3 = topi3[0][0]
+        if ni3 == EOS_token:
+            decoded3_words.append('<EOS>')
+            break
+        else:
+            decoded3_words.append(output_lang3.index2word[ni3])
+        
+        decoder3_input = Variable(torch.LongTensor([[ni3]]))
+        decoder3_input = decoder3_input.cuda() if use_cuda else decoder3_input
+        
 
-    return decoded_words, decoder_attentions[:di + 1]
+    return decoded_words, decoded3_words, decoder_attentions[:di + 1]
 
-def evaluateRandomly(encoder, decoder, n=10):
+def evaluateRandomly(encoder, decoder, decoder3, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
-        print('=', pair[1])
-        output_words, attentions = evaluate(encoder, decoder, pair[0])
+        print('=', pair[1], pair[2])
+        output_words, output_words3, attentions = evaluate(encoder, decoder, decoder3, pair[0])
         output_sentence = ' '.join(output_words)
-        print('<', output_sentence)
+        output_sentence3 = ' '.join(output_words3)
+        print('<', output_sentence, output_sentence3)
         print('')
 
 
@@ -103,18 +136,18 @@ def showAttention(input_sentence, output_words, attentions):
 
 
 def evaluateAndShowAttention(input_sentence):
-    output_words, attentions = evaluate(
-        encoder1, attn_decoder1, input_sentence)
+    output_words, output_words3, attentions = evaluate(
+        encoder1, attn_decoder1, attn_decoder3, input_sentence)
     print('input =', input_sentence)
-    print('output =', ' '.join(output_words))
+    print('output =', ' '.join(output_words), ' '.join(output_words3))
     #showAttention(input_sentence, output_words, attentions)
 
 
 
     
-evaluateRandomly(encoder1, attn_decoder1)
-output_words, attentions = evaluate(
-    encoder1, attn_decoder1, "i hope so .")
+evaluateRandomly(encoder1, attn_decoder1, attn_decoder3)
+output_words, output_words3, attentions = evaluate(
+    encoder1, attn_decoder1, attn_decoder3, "i hope so .")
 
 
 evaluateAndShowAttention("I want to go with you !".lower())
