@@ -57,7 +57,7 @@ def evaluate(encoder, decoder, decoder3, sentence, max_length=MAX_LENGTH):
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
     #new
     decoder3_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
-    decoder3_input.cuda() if use_cuda else decoder3_input
+    decoder3_input = decoder3_input.cuda() if use_cuda else decoder3_input
 
     decoder_hidden = encoder_hidden
 
