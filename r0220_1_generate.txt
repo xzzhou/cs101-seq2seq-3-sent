@@ -1,0 +1,67 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+load successfully
+> it s incredible who s here .
+= who ? me !
+< who did you you <EOS> it me . to . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you you
+
+> what you want ?
+= open up ! we re closed . come back in the morning .
+< open up . <EOS> what s closed ? <EOS>
+
+> you don t know ?
+= i have no idea . i think you do .
+< i have no . <EOS> you had her . <EOS>
+
+> i have to talk to you .
+= we are talking # no in person . now .
+< i guess i <EOS> come now . let s do . <EOS>
+
+> your parents would want you to be in bed .
+= you tell stories ? oh no # i m not good at that . very bad in fact #
+< i ? ? <EOS> yes i i m not at not m at all don t know . <EOS>
+
+> they ve never caught him before what makes you think they ll catch him now ?
+= you got a better idea ? yeah . me .
+< you live . <EOS> where s <EOS>
+
+> thanks # .
+= no thanks ! he said it was a gift .
+< no fun . <EOS> i said to . a . . . . . . . . . . . . <EOS>
+
+> i thought you weren t coming .
+= i almost didn t . lee # uh #
+< i didn t . . <EOS> hell are you a a secret you <EOS>
+
+> you were right .
+=  # i was right about what ?  # it is much better down there . it s a better place .
+< i is i think <EOS> you . <EOS>
+
+> not taken .
+= why ? too heavy .
+< why ? <EOS> you heavy . <EOS>
+
+input = i want to go with you !
+output = what am not ? <EOS> hang up . <EOS>
+input = what are you doing ?
+output = i ve got to get out . <EOS> you can t do you you you re a the rules are you ? <EOS>
+input = who knows ?
+output = where do you want ? <EOS> this side . <EOS>
+input = relax .
+output = how do you always ? <EOS> you know . it s been my people . . <EOS>
+input = fuck you !
+output = i guess ! <EOS> thirty time ! <EOS>
+input = do you love me ?
+output = no of course i can that you <EOS> you asked you how did you know ? <EOS>
+input = when can we marry ?
+output = we ve got to take his job <EOS> where ? we ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? be home . <EOS>
