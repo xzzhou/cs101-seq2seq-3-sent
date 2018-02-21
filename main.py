@@ -31,5 +31,5 @@ if use_cuda:
     
 trainIters(encoder1, attn_decoder1, attn_decoder3, input_lang, output_lang, output_lang3, pairs, 200000, print_every=5000)
 
-save('./savedModel/test_three',encoder1, attn_decoder1, attn_decoder3)
+save('./savedModel/three_sentences_0220',encoder1, attn_decoder1, attn_decoder3)
 
