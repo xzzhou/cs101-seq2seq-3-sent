@@ -19,6 +19,7 @@ from torch import optim
 import torch.nn.functional as F
 from constants import *
 from helper import *
+import datetime
 
 
 ######################################################################
@@ -207,8 +208,11 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
             plot_loss_avg = plot_loss_total / plot_every
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
-    save_list('./loss_data/r0222_train_loss_test.txt', train_loss)
-    save_list('./loss_data/r0222_test_loss_test.txt', test_loss)
+    
+    now = str(datetime.datetime.now()[:16].replace('-','_').replace(':', '_').replace(' ', '_'))
+    
+    save_list('./loss_data/r' + now + '_train_loss.txt', train_loss)
+    save_list('./loss_data/r' + now + '_test_loss.txt', test_loss)
 
     #showPlot(plot_losses)
 
