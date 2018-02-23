@@ -135,6 +135,8 @@ def train(input_variable, target_variable, target_variable3, encoder, decoder, d
             decoder3_input = decoder3_input.cuda() if use_cuda else decoder3_input
             
             loss += criterion(decoder3_output, target_variable3[mi])
+            if ni3 == EOS_token:
+                break
             
 
     loss.backward()
@@ -170,7 +172,11 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
     decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
     decoder_optimizer3 = optim.SGD(decoder3.parameters(), lr=learning_rate)
     
-    training_pairs = [variablesFromPair(input_lang, output_lang, output_lang3, random.choice(pairs))
+    pairs_length = len(pairs)
+    training_num = int(0.85 * pairs_length)
+    random.shuffle(pairs)
+    training_pairs = [variablesFromPair(input_lang, output_lang, output_lang3, \
+                                        pairs[random.randrange(training_num)])
                       for i in range(n_iters)]
     criterion = nn.NLLLoss()
 
@@ -188,8 +194,9 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
         if iter % print_every == 0:
             print_loss_avg = print_loss_total / print_every
             print_loss_total = 0
-            print('%s (%d %d%%) %.4f' % (timeSince(start, iter / n_iters),
-                                         iter, iter / n_iters * 100, print_loss_avg))
+            testing_error = testError(encoder, decoder, decoder3, input_lang, output_lang, output_lang3, pairs, criterion)
+            print('%s (%d %d%%) train = %.4f test = %.4f' % (timeSince(start, iter / n_iters),
+                                         iter, iter / n_iters * 100, print_loss_avg, testing_error))
 
         if iter % plot_every == 0:
             plot_loss_avg = plot_loss_total / plot_every
@@ -198,4 +205,74 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
 
     #showPlot(plot_losses)
 
+#@return the test set error
+def testError(encoder, decoder, decoder3, input_lang, output_lang, output_lang3, pairs, criterion, max_length = MAX_LENGTH):
+    pairs_length = len(pairs)
+    training_num = int(0.85 * pairs_length)
+    testing_num = pairs_length - training_num
+    testing_pairs = [variablesFromPair(input_lang, output_lang, output_lang3, \
+                                       pairs[i]) for i in range(training_num, pairs_length)]
+    total_loss = 0
+    encoder_hidden = encoder.initHidden()
+    for i in range(len(testing_pairs)):
+        testing_pair = testing_pairs[i]
+        input_variable = testing_pair[0]
+        target_variable = testing_pair[1]
+        target_variable3 = testing_pair[2]
+        
+        input_length = input_variable.size()[0]
+        target_length = target_variable.size()[0]
+        target3_length = target_variable3.size()[0]
+        
+        encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
+        encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+        #new
+        decoder_outputs = Variable(torch.zeros(max_length, decoder.hidden_size))
+        decoder_outputs = decoder_outputs.cuda() if use_cuda else decoder_outputs
+    
+        for ei in range(input_length):
+            encoder_output, encoder_hidden = encoder(input_variable[ei],
+                                                 encoder_hidden)
+            encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
+        
+        decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
+        decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+        
+        decoder3_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
+        decoder3_input = decoder3_input.cuda() if use_cuda else decoder3_input
+        
+        decoder_hidden = encoder_hidden
+        loss = 0
+        
+        for di in range(target_length):
+            decoder_output, decoder_output_temp, decoder_hidden, decoder_attention = decoder(
+                decoder_input, decoder_hidden, encoder_outputs)
+            
+            decoder_outputs[di] = decoder_output_temp[0][0]
+            topv, topi = decoder_output.data.topk(1)
+            ni = topi[0][0]
+
+            decoder_input = Variable(torch.LongTensor([[ni]]))
+            decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+
+            loss += criterion(decoder_output, target_variable[di])
+            if ni == EOS_token:
+                break
+        
+        decoder3_hidden = decoder_hidden
+        
+        for mi in range(target3_length):
+            decoder3_output, decoder3_output_temp, decoder3_hidden, decoder3_attention = decoder3(
+                    decoder3_input, decoder3_hidden, decoder_outputs)
+            topv3, topi3 = decoder3_output.data.topk(1)
+            ni3 = topi3[0][0]
+            
+            decoder3_input = Variable(torch.LongTensor([[ni3]]))
+            decoder3_input = decoder3_input.cuda() if use_cuda else decoder3_input
+            
+            loss += criterion(decoder3_output, target_variable3[mi])
+            if ni3 == EOS_token:
+                break
+        total_loss += loss.data[0] / (target_length + target3_length)
+    return total_loss / testing_num
 

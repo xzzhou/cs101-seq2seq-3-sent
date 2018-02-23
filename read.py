@@ -171,27 +171,15 @@ def prepareData(lang1, lang2, lang3, reverse=False):
 # EOS token to both sequences.
 #
 
-def indexesFromSentence(lang, sentence):
-    return [lang.word2index[word] for word in sentence.split(' ')]
 
 
-def variableFromSentence(lang, sentence):
-    indexes = indexesFromSentence(lang, sentence)
-    indexes.append(EOS_token)
-    result = Variable(torch.LongTensor(indexes).view(-1, 1))
-    if use_cuda:
-        return result.cuda()
-    else:
-        return result
 
 
-def variablesFromPair(input_lang, output_lang, pair):
-    input_variable = variableFromSentence(input_lang, pair[0])
-    target_variable = variableFromSentence(output_lang, pair[1])
-    return (input_variable, target_variable)
+
+input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3', False)
 
 
-#input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3', False)
+
 #print(random.choice(pairs))
 #print(normalizeString("How are's you#"))
 #print(re.sub(r"([.!?])", r" \1", "How's are you?"))
