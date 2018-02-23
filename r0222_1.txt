@@ -1,0 +1,37 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+['she s one of a kind .', 'try one in a million !', 'well what should we do ?']
+4m 54s (- 93m 20s) (5000 5%) train = 3.4533 test = 2.2929
+9m 32s (- 85m 56s) (10000 10%) train = 3.1795 test = 2.4582
+14m 15s (- 80m 48s) (15000 15%) train = 3.0974 test = 2.5725
+18m 57s (- 75m 48s) (20000 20%) train = 2.9618 test = 3.3286
+23m 39s (- 70m 59s) (25000 25%) train = 2.8850 test = 3.1181
+28m 26s (- 66m 21s) (30000 30%) train = 2.8274 test = 3.2849
+33m 13s (- 61m 41s) (35000 35%) train = 2.7427 test = 3.4796
+38m 6s (- 57m 10s) (40000 40%) train = 2.6657 test = 3.6934
+42m 55s (- 52m 28s) (45000 45%) train = 2.5326 test = 3.4915
+47m 50s (- 47m 50s) (50000 50%) train = 2.4608 test = 3.6582
+52m 48s (- 43m 12s) (55000 55%) train = 2.3640 test = 3.8901
+57m 49s (- 38m 32s) (60000 60%) train = 2.2538 test = 4.0805
+62m 49s (- 33m 49s) (65000 65%) train = 2.2207 test = 4.0586
+67m 49s (- 29m 4s) (70000 70%) train = 2.1201 test = 4.2149
+72m 53s (- 24m 17s) (75000 75%) train = 2.0783 test = 4.2238
+77m 56s (- 19m 29s) (80000 80%) train = 2.0466 test = 4.1910
+83m 5s (- 14m 39s) (85000 85%) train = 2.0102 test = 4.5000
+88m 12s (- 9m 48s) (90000 90%) train = 1.9900 test = 4.2375
+93m 21s (- 4m 54s) (95000 95%) train = 1.9545 test = 4.8323
+98m 27s (- 0m 0s) (100000 100%) train = 1.9579 test = 4.6354
