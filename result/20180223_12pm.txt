@@ -1,0 +1,38 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+['i used to like it here . i used to care about what happened . now i think i ll sell my house and move the fuck away .', 'billy please . the children .', 'the children .']
+6m 31s (- 91m 24s) (7000 6%) train = 3.3886 test = 2.6055
+12m 44s (- 82m 49s) (14000 13%) train = 3.0961 test = 2.4380
+18m 59s (- 75m 58s) (21000 20%) train = 2.9809 test = 2.7444
+25m 21s (- 69m 43s) (28000 26%) train = 2.8767 test = 3.1146
+31m 46s (- 63m 32s) (35000 33%) train = 2.7493 test = 3.2607
+38m 15s (- 57m 22s) (42000 40%) train = 2.6072 test = 3.3420
+44m 50s (- 51m 15s) (49000 46%) train = 2.5274 test = 3.6403
+51m 30s (- 45m 3s) (56000 53%) train = 2.3940 test = 3.7561
+58m 14s (- 38m 49s) (63000 60%) train = 2.2657 test = 4.1068
+65m 3s (- 32m 31s) (70000 66%) train = 2.1713 test = 4.3060
+71m 52s (- 26m 8s) (77000 73%) train = 2.0797 test = 4.0350
+78m 40s (- 19m 40s) (84000 80%) train = 2.0265 test = 4.1113
+85m 36s (- 13m 10s) (91000 86%) train = 1.9872 test = 4.3043
+92m 30s (- 6m 36s) (98000 93%) train = 1.9563 test = 4.6798
+99m 28s (- 0m 0s) (105000 100%) train = 1.9825 test = 4.8509
+Traceback (most recent call last):
+  File "main.py", line 32, in <module>
+    trainIters(encoder1, attn_decoder1, attn_decoder3, input_lang, output_lang, output_lang3, pairs, 105000, print_every=7000)
+  File "/home/ubuntu/xinghao/cs101-seq2seq-3-sent/train.py", line 212, in trainIters
+    now = str(datetime.datetime.now()[:16].replace('-','_').replace(':', '_').replace(' ', '_'))
+TypeError: 'datetime.datetime' object is not subscriptable
