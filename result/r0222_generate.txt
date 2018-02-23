@@ -1,0 +1,75 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+load successfully
+> it s just like driving a car # .
+= where do i pull off # ? you re doing fine . i ll keep you out of trouble . relax # .
+< thanks # <EOS> third: you re not out . <EOS>
+
+> are you afraid for me ? where i m going .
+= yes . don t be . i m going . where we all go . now how can that be bad .
+< yes . <EOS> third: take take my home . <EOS>
+
+> are you all right ?
+= a few years older perhaps . how s your arm ?
+< yes . i m fine all right . <EOS> third: would you think it ? <EOS>
+
+> when are you leaving ?
+= tomorrow . i m going to miss you .
+< tomorrow . <EOS> third: i m going to miss you . <EOS>
+
+> oh andy .
+= don t cry . i can t help it . you don t know # . .
+< don t cry ? <EOS> third: i can t help it . you can t get the check . <EOS>
+
+> good morning .
+= morning . i wonder if you could help me .
+< is it a good morning ? <EOS> third: yes sir . <EOS>
+
+> how much further ?
+= almost there # are you in a hurry or something ? well yeah kind of .
+< almost # # # # # would be a couple # i ll be something to we # to go to to to to to to to to go to # <EOS> third: well that is a lot of up man . <EOS>
+
+> you cannot kill what is already dead .
+= let her go ! yes # yes . i think i will #
+< let go go ! <EOS> third: yes ! <EOS>
+
+> morning .
+= how d you sleep honey okay ? fine .
+< how s good ? <EOS> third: how you feel good night ? <EOS>
+
+> you re glad somebody tried to kill me ?
+= no of course not but i think now that this has happened a lot of things can start to come out # yeah like #
+< no . <EOS> third: nothing . ll . ll make it . <EOS>
+
+input = i want to go with you !
+output = oh . <EOS> third: you get a a with a <EOS>
+input = what are you doing ?
+output = what are you doing ? <EOS> third: i know <EOS>
+input = who knows ?
+output = where do you do with me ? <EOS> third: why ? <EOS>
+input = relax .
+output = how the hell can i feel about it ? <EOS> third: i don t know . <EOS>
+input = fuck you !
+output = yeah . <EOS> third: don t you . ! <EOS>
+input = do you love me ?
+output = do you love me ? <EOS> third: i asked first . <EOS>
+input = when can we marry ?
+output = just you just a you think you just a you think you re real here . <EOS> third: well right . <EOS>
