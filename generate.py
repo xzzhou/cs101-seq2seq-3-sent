@@ -17,7 +17,7 @@ import random
 
 input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3',False)
 
-filename = './savedModel/three_sentences_0220'
+filename = './savedModel/three_sentences_0222'
 encoder1 = torch.load(filename + '_encoder1.pth')
 attn_decoder1 = torch.load(filename + '_attn_decoder1.pth')
 attn_decoder3 = torch.load(filename + '_attn_decoder3.pth')
