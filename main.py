@@ -31,6 +31,6 @@ if use_cuda:
     
 trainIters(encoder1, attn_decoder1, attn_decoder3, input_lang, output_lang, output_lang3, pairs, 105000, print_every=7000)
 
-now = str(datetime.datetime.now()[:16].replace('-','_').replace(':', '_').replace(' ', '_'))
+now = str(datetime.datetime.now())[:16].replace('-','_').replace(':', '_').replace(' ', '_')
 save('./savedModel/three_sentences_' + now ,encoder1, attn_decoder1, attn_decoder3)
 

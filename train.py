@@ -209,7 +209,7 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
     
-    now = str(datetime.datetime.now()[:16].replace('-','_').replace(':', '_').replace(' ', '_'))
+    now = str(datetime.datetime.now())[:16].replace('-','_').replace(':', '_').replace(' ', '_')
     
     save_list('./loss_data/r' + now + '_train_loss.txt', train_loss)
     save_list('./loss_data/r' + now + '_test_loss.txt', test_loss)
