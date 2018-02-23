@@ -108,7 +108,7 @@ def evaluateRandomly(encoder, decoder, decoder3, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
-        print('=', pair[1], pair[2])
+        print('=', pair[1], 'third', pair[2])
         output_words, output_words3, attentions = evaluate(encoder, decoder, decoder3, pair[0])
         output_sentence = ' '.join(output_words)
         output_sentence3 = ' '.join(output_words3)
