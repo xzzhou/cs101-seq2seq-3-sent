@@ -167,6 +167,9 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
     plot_losses = []
     print_loss_total = 0  # Reset every print_every
     plot_loss_total = 0  # Reset every plot_every
+    
+    train_loss = []
+    test_loss = []
 
     encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
     decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
@@ -194,7 +197,9 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
         if iter % print_every == 0:
             print_loss_avg = print_loss_total / print_every
             print_loss_total = 0
+            train_loss.append(print_loss_avg)
             testing_error = testError(encoder, decoder, decoder3, input_lang, output_lang, output_lang3, pairs, criterion)
+            test_loss.append(testing_error)
             print('%s (%d %d%%) train = %.4f test = %.4f' % (timeSince(start, iter / n_iters),
                                          iter, iter / n_iters * 100, print_loss_avg, testing_error))
 
@@ -202,7 +207,9 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
             plot_loss_avg = plot_loss_total / plot_every
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
-
+        save_list('./result/r0222_train_loss.txt', train_loss)
+        save_list('./result/r0222_test_loss.txt',test_loss)
+        
     #showPlot(plot_losses)
 
 #@return the test set error

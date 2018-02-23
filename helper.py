@@ -77,3 +77,8 @@ def save(save_filename, encoder1, attn_decoder1, attn_decoder3):
     torch.save(encoder1, save_filename + '_encoder1.pth')
     torch.save(attn_decoder1, save_filename + '_attn_decoder1.pth')
     torch.save(attn_decoder3, save_filename + '_attn_decoder3.pth')
+
+def save_list(save_filename, a):
+    with open(save_filename, 'w', encoding = 'utf-8') as f:
+        for i in range(len(a)):
+            f.write(str(a)+'\n')
