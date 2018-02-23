@@ -108,11 +108,11 @@ def evaluateRandomly(encoder, decoder, decoder3, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
-        print('=', pair[1], 'third', pair[2])
+        print('=', pair[1], 'third sentence:', pair[2])
         output_words, output_words3, attentions = evaluate(encoder, decoder, decoder3, pair[0])
         output_sentence = ' '.join(output_words)
         output_sentence3 = ' '.join(output_words3)
-        print('<', output_sentence, 'third:',output_sentence3)
+        print('<', output_sentence, 'third sentence:',output_sentence3)
         print('')
 
 
@@ -139,7 +139,7 @@ def evaluateAndShowAttention(input_sentence):
     output_words, output_words3, attentions = evaluate(
         encoder1, attn_decoder1, attn_decoder3, input_sentence)
     print('input =', input_sentence)
-    print('output =', ' '.join(output_words), 'third:',' '.join(output_words3))
+    print('output =', ' '.join(output_words), 'third sentence:',' '.join(output_words3))
     #showAttention(input_sentence, output_words, attentions)
 
 

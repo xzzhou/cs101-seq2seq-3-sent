@@ -207,9 +207,9 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
             plot_loss_avg = plot_loss_total / plot_every
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
-        save_list('./result/r0222_train_loss.txt', train_loss)
-        save_list('./result/r0222_test_loss.txt',test_loss)
-        
+    save_list('./loss_data/r0222_train_loss_test.txt', train_loss)
+    save_list('./loss_data/r0222_test_loss_test.txt', test_loss)
+
     #showPlot(plot_losses)
 
 #@return the test set error
@@ -220,8 +220,9 @@ def testError(encoder, decoder, decoder3, input_lang, output_lang, output_lang3,
     testing_pairs = [variablesFromPair(input_lang, output_lang, output_lang3, \
                                        pairs[i]) for i in range(training_num, pairs_length)]
     total_loss = 0
-    encoder_hidden = encoder.initHidden()
+
     for i in range(len(testing_pairs)):
+        encoder_hidden = encoder.initHidden()
         testing_pair = testing_pairs[i]
         input_variable = testing_pair[0]
         target_variable = testing_pair[1]

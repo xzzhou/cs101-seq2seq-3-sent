@@ -81,4 +81,4 @@ def save(save_filename, encoder1, attn_decoder1, attn_decoder3):
 def save_list(save_filename, a):
     with open(save_filename, 'w', encoding = 'utf-8') as f:
         for i in range(len(a)):
-            f.write(str(a)+'\n')
+            f.write(str(a[i])+'\n')

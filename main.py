@@ -29,7 +29,7 @@ if use_cuda:
     attn_decoder1 = attn_decoder1.cuda()
     att_decoder3 = attn_decoder3.cuda()
     
-trainIters(encoder1, attn_decoder1, attn_decoder3, input_lang, output_lang, output_lang3, pairs, 100000, print_every=5000)
+trainIters(encoder1, attn_decoder1, attn_decoder3, input_lang, output_lang, output_lang3, pairs, 20, print_every=2)
 
 save('./savedModel/three_sentences_0222',encoder1, attn_decoder1, attn_decoder3)
 
