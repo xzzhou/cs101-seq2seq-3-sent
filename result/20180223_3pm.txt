@@ -1,0 +1,32 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1527
+output 1529
+output3 1580
+['okay how do you want to do it ?', 'i want someone i know to take me in .', 'who ?']
+6m 28s (- 90m 43s) (7000 6%) train = 3.4008 test = 2.5895
+12m 37s (- 82m 6s) (14000 13%) train = 3.0669 test = 2.4403
+18m 52s (- 75m 29s) (21000 20%) train = 2.9616 test = 2.9015
+25m 5s (- 68m 59s) (28000 26%) train = 2.8613 test = 2.9264
+31m 23s (- 62m 47s) (35000 33%) train = 2.7660 test = 3.2326
+37m 51s (- 56m 47s) (42000 40%) train = 2.6460 test = 3.3897
+44m 19s (- 50m 39s) (49000 46%) train = 2.5138 test = 3.8198
+50m 52s (- 44m 30s) (56000 53%) train = 2.4116 test = 3.6989
+57m 26s (- 38m 17s) (63000 60%) train = 2.2542 test = 3.9993
+64m 8s (- 32m 4s) (70000 66%) train = 2.1830 test = 4.0490
+70m 51s (- 25m 45s) (77000 73%) train = 2.1051 test = 3.8959
+77m 36s (- 19m 24s) (84000 80%) train = 2.0342 test = 4.3930
+84m 25s (- 12m 59s) (91000 86%) train = 1.9945 test = 4.4844
+91m 14s (- 6m 31s) (98000 93%) train = 1.9829 test = 4.5909
+98m 6s (- 0m 0s) (105000 100%) train = 1.9624 test = 4.6427
