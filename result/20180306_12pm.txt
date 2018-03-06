@@ -1,0 +1,24 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['mommy $', 'yes darling .', 'did you ever make a wish ?']
+6m 26s (- 90m 16s) (7000 6%) train = 3.3680 test = 3.2210
+12m 32s (- 81m 34s) (14000 13%) train = 3.0492 test = 2.6951
+18m 39s (- 74m 37s) (21000 20%) train = 2.9457 test = 2.7031
+24m 47s (- 68m 11s) (28000 26%) train = 2.8391 test = 3.2222
+31m 2s (- 62m 5s) (35000 33%) train = 2.7586 test = 3.3367
+37m 22s (- 56m 3s) (42000 40%) train = 2.6143 test = 3.2154
+43m 47s (- 50m 3s) (49000 46%) train = 2.4788 test = 3.7331
+50m 20s (- 44m 2s) (56000 53%) train = 2.3639 test = 3.6388
+56m 53s (- 37m 55s) (63000 60%) train = 2.2357 test = 3.7157
+63m 30s (- 31m 45s) (70000 66%) train = 2.1323 test = 4.0136
+70m 10s (- 25m 31s) (77000 73%) train = 2.0564 test = 4.2903
+76m 48s (- 19m 12s) (84000 80%) train = 2.0037 test = 4.1119
+83m 28s (- 12m 50s) (91000 86%) train = 1.9775 test = 4.4249
+90m 14s (- 6m 26s) (98000 93%) train = 1.9611 test = 4.4387
+96m 56s (- 0m 0s) (105000 100%) train = 1.9578 test = 4.4243
