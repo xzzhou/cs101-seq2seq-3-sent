@@ -15,7 +15,7 @@ from model import *
 import random
 
 
-input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3',False)
+input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3-2',False)
 print(random.choice(pairs))
 
 

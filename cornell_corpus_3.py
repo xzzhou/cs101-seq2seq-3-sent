@@ -71,15 +71,22 @@ def main(threshold=50):
             m2 = tag2.search(text_dic[tup[1]])
             m3 = tag2.search(text_dic[tup[2]])
             if m1 is not None:
-                text_dic[tup[0]] = text_dic[tup[0]].replace("...", "#")
+                text_dic[tup[0]] = text_dic[tup[0]].replace("...", "# ")
             if m2 is not None:
-                text_dic[tup[1]] = text_dic[tup[1]].replace("...", "#")
+                text_dic[tup[1]] = text_dic[tup[1]].replace("...", "# ")
             if m3 is not None:
-                text_dic[tup[2]] = text_dic[tup[2]].replace("...", "#")
+                text_dic[tup[2]] = text_dic[tup[2]].replace("...", "# ")
 
             
                 # remove the sentences containing multi byte words
             if is_english(text_dic[tup[0]] + text_dic[tup[1]] + text_dic[tup[2]]):
+                text_dic[tup[0]] = text_dic[tup[0]].replace(". . .", "# ")
+                text_dic[tup[1]] = text_dic[tup[1]].replace(". . .", "# ")
+                text_dic[tup[2]] = text_dic[tup[2]].replace(". . .", "# ")
+                        
+                text_dic[tup[0]] = text_dic[tup[0]].replace("--", "$ ")
+                text_dic[tup[1]] = text_dic[tup[1]].replace("--", "$ ")
+                text_dic[tup[2]] = text_dic[tup[2]].replace("--", "$ ")
                 posts.append([unicodedata.normalize('NFKC', word.lower())
                                   for word in word_tokenize(text_dic[tup[0]])])
                 cmnts.append([unicodedata.normalize('NFKC', word.lower())
@@ -98,7 +105,7 @@ def main(threshold=50):
     # remove the sentences having low frequency words
     corpus = corpora.Dictionary(posts + cmnts + cmnts2, prune_at=None)
     cut_freq = {freq + 1 for freq in range(threshold)}
-    with open('data/three_corpus.txt', 'w', encoding='utf-8') as f:
+    with open('data/three_corpus2.txt', 'w', encoding='utf-8') as f:
         for i in range(len(posts)):
             post = set([corpus.dfs[corpus.token2id[word]] for word in posts[i]])
             cmnt = set([corpus.dfs[corpus.token2id[word]] for word in cmnts[i]])

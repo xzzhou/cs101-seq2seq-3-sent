@@ -211,8 +211,8 @@ def trainIters(encoder, decoder, decoder3, input_lang, output_lang, output_lang3
     
     now = str(datetime.datetime.now())[:16].replace('-','_').replace(':', '_').replace(' ', '_')
     
-    save_list('./loss_data/r' + now + '_train_loss.txt', train_loss)
-    save_list('./loss_data/r' + now + '_test_loss.txt', test_loss)
+    save_list('./loss_data/r3' + now + '_train_loss.txt', train_loss)
+    save_list('./loss_data/r3' + now + '_test_loss.txt', test_loss)
 
     #showPlot(plot_losses)
 

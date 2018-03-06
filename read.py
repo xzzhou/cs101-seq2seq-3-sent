@@ -70,8 +70,8 @@ def unicodeToAscii(s):
 
 def normalizeString(s):
     s = unicodeToAscii(s.lower().strip())
-    s = re.sub(r"([.!?#])", r" \1", s)
-    s = re.sub(r"[^a-zA-Z.!?#]+", r" ", s)
+    s = re.sub(r"([.!?#$])", r" \1", s)
+    s = re.sub(r"[^a-zA-Z.!?#$]+", r" ", s)
     return s
 
 
@@ -176,11 +176,11 @@ def prepareData(lang1, lang2, lang3, reverse=False):
 
 
 
-input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3', False)
+#input_lang, output_lang, output_lang3, pairs = prepareData('input', 'output', 'output3-2', False)
 
 
 
 #print(random.choice(pairs))
-#print(normalizeString("How are's you#"))
+#print(normalizeString("How are's you$"))
 #print(re.sub(r"([.!?])", r" \1", "How's are you?"))
 
