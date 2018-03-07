@@ -1,0 +1,24 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['but it s christmas now .', 'breakfast .', 'what are you going to give me ? i hope i don t like it .']
+10m 38s (- 149m 1s) (7000 6%) train = 3.3927 test = 3.0468
+20m 54s (- 135m 52s) (14000 13%) train = 3.0390 test = 2.8312
+31m 36s (- 126m 26s) (21000 20%) train = 2.8773 test = 3.4064
+42m 28s (- 116m 47s) (28000 26%) train = 2.6758 test = 3.8186
+53m 38s (- 107m 16s) (35000 33%) train = 2.4787 test = 4.0992
+64m 54s (- 97m 22s) (42000 40%) train = 2.2896 test = 4.1903
+76m 18s (- 87m 12s) (49000 46%) train = 2.1832 test = 4.1717
+87m 56s (- 76m 56s) (56000 53%) train = 2.1161 test = 4.7464
+99m 31s (- 66m 21s) (63000 60%) train = 2.0597 test = 4.7511
+111m 15s (- 55m 37s) (70000 66%) train = 2.0166 test = 4.8695
+122m 54s (- 44m 41s) (77000 73%) train = 1.9633 test = 4.6869
+134m 39s (- 33m 39s) (84000 80%) train = 1.9687 test = 5.2915
+146m 18s (- 22m 30s) (91000 86%) train = 1.9487 test = 5.0868
+157m 57s (- 11m 16s) (98000 93%) train = 1.9897 test = 5.4880
+169m 41s (- 0m 0s) (105000 100%) train = 2.0844 test = 5.3845

@@ -1,0 +1,67 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+load successfully
+> have you come from my brother ?
+= yes . third sentence: why ?
+< i d you you and you <EOS> third sentence: i do you that . <EOS>
+
+> there you are sir .
+= thank you . third sentence: thirty one s and two ten s ?
+< thank you . <EOS> third sentence: thirty one s and s think you <EOS>
+
+> what the fuck is that ?
+= what ? third sentence: i heard you man . don t give me that what shit . you just told them that you re gonna put out a record with them .
+< what ? <EOS> third sentence: i heard you man ? don t give it that what shit what you just them that that just do them . <EOS>
+
+> you re not going out right away are you ?
+= waiting for andy . third sentence: i want you to meet my cousin .
+< waiting for andy . <EOS> third sentence: i want to to meet you cousin . <EOS>
+
+> wanna know how i did that ?
+= yeah # third sentence: gotta go . see you guys later .
+< yeah . . know . . know . . <EOS> third sentence: gotta go see you guys later . <EOS>
+
+> i didn t expect to see you .
+= i know . third sentence: why d you come back ?
+< i know <EOS> third sentence: but d <EOS>
+
+> why won t you answer me ?
+= cause you know goddamn well who i am . third sentence: i don t know you .
+< cause you know goddamn well who it goddamn well that it i well i <EOS> third sentence: i don t know . you . <EOS>
+
+> you ok ?
+= just thinking about something . third sentence: what ?
+< just thinking . <EOS> third sentence: what ? <EOS>
+
+> i ve found it .
+= found what ? third sentence: what i want to do ! right now . what is really inside of me .
+< you have saw ? ? was just have things that ? saw ? ? that ? him there isn t got ? ? that s not gonna be him or later to <EOS> third sentence: why ? <EOS>
+
+> sit down ! you re gonna fall out !
+= me fall ? let s get some drugs ! third sentence: drugs ? ? !
+< fall fall ? fall ? fall some some ? ! <EOS> third sentence: drugs ? ? ? ? <EOS>
+
+input = i want to go with you !
+output = my ! <EOS> third sentence: what you the it <EOS>
+input = what are you doing ?
+output = what . . . <EOS> third sentence: what s <EOS>
+input = who knows ?
+output = when you miss do you <EOS> third sentence: this is is i i <EOS>
+input = relax .
+output = how can i just relax . <EOS> third sentence: i know the bad . . . . <EOS>
+input = fuck you !
+output = keep . <EOS> third sentence: what not not not not not for you <EOS>
+input = do you love me ?
+output = you love you ? <EOS> third sentence: i asked first you <EOS>
+input = when can we marry ?
+output =  didn you you you <EOS> third sentence:  it s <EOS>

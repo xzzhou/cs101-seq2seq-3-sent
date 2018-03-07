@@ -1,0 +1,24 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['please ed .', 'but it s #', 'please ed .']
+24m 54s (- 348m 39s) (7000 6%) train = 3.4038 test = 3.2346
+49m 52s (- 324m 11s) (14000 13%) train = 3.0746 test = 2.8942
+75m 14s (- 300m 59s) (21000 20%) train = 2.8492 test = 3.3398
+101m 22s (- 278m 47s) (28000 26%) train = 2.6959 test = 3.7102
+127m 53s (- 255m 46s) (35000 33%) train = 2.5397 test = 3.8522
+154m 41s (- 232m 1s) (42000 40%) train = 2.4215 test = 4.2112
+181m 56s (- 207m 55s) (49000 46%) train = 2.3163 test = 4.0061
+209m 4s (- 182m 56s) (56000 53%) train = 2.2169 test = 4.4517
+236m 31s (- 157m 41s) (63000 60%) train = 2.2224 test = 4.5010
+263m 59s (- 131m 59s) (70000 66%) train = 2.3575 test = 5.8382
+291m 27s (- 105m 59s) (77000 73%) train = 2.6504 test = 4.9455
+319m 0s (- 79m 45s) (84000 80%) train = 2.8070 test = 4.9400
+346m 17s (- 53m 16s) (91000 86%) train = 2.9654 test = 5.0856
+373m 45s (- 26m 41s) (98000 93%) train = 3.1924 test = 5.9099
+401m 25s (- 0m 0s) (105000 100%) train = 11.8599 test = 35.1269
