@@ -1,0 +1,67 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+load successfully
+> what ?
+= they re inside . third sentence: who ?
+< we can to . <EOS> third sentence: i s <EOS>
+
+> how do you get it out ?
+= same way i been doin but first they got to let me go back to work . third sentence: you re gonna offer to set him up ?
+< same way been doin but doin but doin to let to to to to to to to to <EOS> third sentence: but re gonna leave them . <EOS>
+
+> here with you .
+= and it s a all real . third sentence: yes .
+< there and me s stay . <EOS> third sentence: that s all right . <EOS>
+
+> i should have gone to the police i suppose .
+= but you didn t . why not ? third sentence: i don t know . i guess # i wanted to see what would happen .
+< but you didn t . <EOS> third sentence: i don t know . i guess i <EOS>
+
+> dad # ?
+= chief ? ! is that you ? third sentence: yeah it s me .
+< yes # <EOS> third sentence: then it s . . <EOS>
+
+> are you sure this is a real dance ?
+= well actually uh $ i m sort of making it up $ third sentence: really ?
+< well actually i m sort of <EOS> third sentence: here but <EOS>
+
+> except yourself !
+= will you wait a minute ? third sentence: you don t want me to go .
+< you ! <EOS> third sentence: i don t want to to go . <EOS>
+
+> you okay ? !
+= oh great # yeah having a great time and you ? third sentence: no thank you you crazy old woman .
+< great great great great great great great i # <EOS> third sentence: we ve thank it for another tape ? <EOS>
+
+> whatever it is i m gonna find out and sooner is a hell of lot better than later .
+= well there s something missing in there . there was something around her neck when i came in there but it s gone now . third sentence: who came in after you ?
+< well well in your well in but it s in yours but in it s in yours . <EOS> third sentence: in fine ? how i you ? <EOS>
+
+> you saved my life . you could have run but you didn t . you saved me .
+= you saved me . third sentence: i saved you because i love you nick . why d you save me ?
+< you me me me me me me something <EOS> third sentence: i love you because why you love you too . <EOS>
+
+input = i want to go with you !
+output = but # # <EOS> third sentence: we ! ! ! <EOS>
+input = what are you doing ?
+output = well it s pretty obvious you don t want me around any more me i want me around any more me any of more s i <EOS> third sentence: well look $ <EOS>
+input = who knows ?
+output = where do you want it ? <EOS> third sentence: i don t know . <EOS>
+input = relax .
+output = how i hell you relax after after after after after after seeing i relax . <EOS> third sentence: i know it was bad . . <EOS>
+input = fuck you !
+output = why ? <EOS> third sentence: what know you know . <EOS>
+input = do you love me ?
+output = come ! you love me ! <EOS> third sentence: first it . something . <EOS>
+input = when can we marry ?
+output = please ! <EOS> third sentence: to to still this . <EOS>
