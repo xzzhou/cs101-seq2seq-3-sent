@@ -1,0 +1,20 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['it s andy again .', 'still not here .', 'in this corner ?']
+7m 57s (- 79m 31s) (7000 9%) train = 3.3653 test = 2.4219
+15m 42s (- 70m 41s) (14000 18%) train = 3.0707 test = 2.8719
+23m 40s (- 63m 8s) (21000 27%) train = 2.9187 test = 2.9161
+31m 49s (- 55m 40s) (28000 36%) train = 2.7283 test = 3.8854
+40m 6s (- 48m 8s) (35000 45%) train = 2.5270 test = 3.8421
+48m 34s (- 40m 29s) (42000 54%) train = 2.3392 test = 4.1078
+57m 10s (- 32m 40s) (49000 63%) train = 2.1596 test = 4.1294
+65m 54s (- 24m 42s) (56000 72%) train = 2.0045 test = 4.4819
+74m 42s (- 16m 36s) (63000 81%) train = 1.9049 test = 4.6520
+83m 30s (- 8m 21s) (70000 90%) train = 1.8099 test = 4.7150
+92m 27s (- 0m 0s) (77000 100%) train = 1.8182 test = 4.8088

@@ -1,0 +1,67 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+load successfully
+> get him on the phone .
+= he s on the island he ll be back on # third sentence: get him on the #
+< he s he the island island he s we ll be back on that way . <EOS> third sentence: you re going . <EOS>
+
+> knock it off !
+= may as well go out under my own free will right ? third sentence: not with us in the fuckin car !
+< may as well go under my own own own own own own own own own own own own own own own own own own own free will right ? <EOS> third sentence: not with us in the fuckin car ! <EOS>
+
+> dad ?
+= yes . third sentence: did you come home during the day last week ?
+< i love you . <EOS> third sentence: dad did you <EOS>
+
+> you may not like what you hear .
+= i can take it . third sentence: they ve become what you wanted . they re a crew . that s why he came .
+< i can . <EOS> third sentence: you ve they they they you you us . <EOS>
+
+> possibly .
+= how long has this been going on ? third sentence: a week . we were waiting for the right time to $
+< i ! <EOS> third sentence: you said <EOS>
+
+> i tried your friends . they re not at that address any more . but .
+= you made contact ? third sentence: be ready to leave in two days time . same place as last night .
+< you thought maybe contact so little bit ? <EOS> third sentence: be a lot of a lot . what did you say ? <EOS>
+
+> you okay ?
+= i wanna leave . get me out of here . third sentence: oh come on . it s early .
+< yeah . sure . <EOS> third sentence: look m look at your eye # <EOS>
+
+> where are you taking me ?
+= south america . third sentence: south america !
+< no . <EOS> third sentence: and you me ? ? <EOS>
+
+> no .
+= no one knows you re here ? third sentence: no . i had to talk to you .
+< i could have time . <EOS> third sentence: yes . . . <EOS>
+
+> larry ?
+= yeah ? third sentence: i think we ve got a problem .
+< yeah are you doing ? <EOS> third sentence: how do you know ? <EOS>
+
+input = i want to go with you !
+output = what is a <EOS> third sentence: but you said take no to <EOS>
+input = what are you doing ?
+output = what ? <EOS> third sentence: that s a ridiculous . move . <EOS>
+input = who knows ?
+output = where do you want any guess i <EOS> third sentence: i don t know . <EOS>
+input = relax .
+output = i can t come on it . <EOS> third sentence: i know it . <EOS>
+input = fuck you !
+output = what ? <EOS> third sentence: you re so <EOS>
+input = do you love me ?
+output = love you . love me . <EOS> third sentence: call you what you first . <EOS>
+input = when can we marry ?
+output = i re right $ <EOS> third sentence: do ll . . <EOS>
