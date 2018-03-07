@@ -1,0 +1,24 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['there .', 'must be billy s girl .', 'come on .']
+7m 59s (- 111m 51s) (7000 6%) train = 3.4063 test = 2.1923
+15m 42s (- 102m 6s) (14000 13%) train = 3.0367 test = 3.0389
+23m 36s (- 94m 24s) (21000 20%) train = 2.9125 test = 3.4760
+31m 42s (- 87m 10s) (28000 26%) train = 2.7358 test = 3.1610
+39m 58s (- 79m 57s) (35000 33%) train = 2.5353 test = 3.8122
+48m 25s (- 72m 38s) (42000 40%) train = 2.3321 test = 4.1268
+57m 1s (- 65m 10s) (49000 46%) train = 2.1420 test = 4.3068
+65m 40s (- 57m 27s) (56000 53%) train = 1.9798 test = 4.5214
+74m 28s (- 49m 39s) (63000 60%) train = 1.8804 test = 4.5880
+83m 16s (- 41m 38s) (70000 66%) train = 1.8804 test = 4.8223
+92m 7s (- 33m 30s) (77000 73%) train = 1.8262 test = 4.7294
+100m 57s (- 25m 14s) (84000 80%) train = 1.8148 test = 5.1148
+109m 47s (- 16m 53s) (91000 86%) train = 1.8387 test = 4.7137
+118m 40s (- 8m 28s) (98000 93%) train = 1.8555 test = 5.1147
+127m 29s (- 0m 0s) (105000 100%) train = 1.8949 test = 5.1274
