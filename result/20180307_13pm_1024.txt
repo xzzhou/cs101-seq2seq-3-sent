@@ -1,0 +1,20 @@
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+['hello ?', 'yes .', 'okay . good night .']
+10m 30s (- 105m 8s) (7000 9%) train = 3.3659 test = 3.0624
+20m 59s (- 94m 26s) (14000 18%) train = 3.0716 test = 3.0606
+31m 41s (- 84m 30s) (21000 27%) train = 2.8767 test = 3.5134
+42m 38s (- 74m 36s) (28000 36%) train = 2.6558 test = 3.7858
+53m 39s (- 64m 23s) (35000 45%) train = 2.4603 test = 4.0418
+64m 51s (- 54m 3s) (42000 54%) train = 2.2698 test = 4.1783
+76m 17s (- 43m 35s) (49000 63%) train = 2.1674 test = 4.7473
+87m 44s (- 32m 54s) (56000 72%) train = 2.0593 test = 4.5038
+99m 12s (- 22m 2s) (63000 81%) train = 1.9882 test = 4.7540
+110m 51s (- 11m 5s) (70000 90%) train = 1.9310 test = 4.8267
+122m 30s (- 0m 0s) (77000 100%) train = 1.9163 test = 4.9659

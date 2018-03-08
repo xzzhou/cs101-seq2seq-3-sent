@@ -1,0 +1,67 @@
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:37: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output, hidden = self.gru(output, hidden)
+/home/ubuntu/xinghao/cs101-seq2seq-3-sent/model.py:75: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output_temp, hidden = self.gru(output, hidden)
+Reading lines...
+Read 6163 sentence pairs
+Trimmed to 6163 sentence pairs
+Counting words...
+Counted words:
+input 1470
+output 1487
+output3-2 1517
+load successfully
+> y know how i said that stuff on television didn t bother me ?
+= yes . third sentence: it did .
+< if ? didn did . know . <EOS> third sentence: no me <EOS>
+
+> here it is .
+= what is it ? third sentence: it s a sun dress .
+< it s t <EOS> third sentence: you . <EOS>
+
+> hello ?
+= hello bob it s me . third sentence: hello ?
+< yes it a story . what are you ? <EOS> third sentence: i m fine . <EOS>
+
+> what is it what s wrong ?
+= whoa ! third sentence: what is it ?
+< whoa ! <EOS> third sentence: what s it ? <EOS>
+
+> my mistake . i apologize .
+= what made you ask such a question ? third sentence: i thought that s what we were doing $ asking questions .
+< what made you ask such a question ? <EOS> third sentence: i thought that s all right $ i re doing fine . i s your name # <EOS>
+
+> oh no you re not . you ve gone too far this time # and who s paying for all this ?
+= it s all taken care of . it s down on our bill . third sentence: oh well that s all right . what ?
+< oh you a few it # . just a few you . just . just a few it all a couple of minutes . we can tell you or the two # <EOS> third sentence: i don t get it ?  <EOS>
+
+> i believe you .
+= thanks very much . third sentence: oh you ve got the money all right $ you just don t know you ve got it .
+< you re still here . . m still . know . m just another problem there . you re still here # the only one got your eyes is here now and i re only one here now and i re out of here i <EOS> third sentence: i ll be a bad . <EOS>
+
+> what did they ask ?
+= if i had seen you . by the way i m sorry about your wife . they told me . third sentence: thank you # i m sorry you had to lie . it must have been difficult .
+< uh huh ? they said to them tell them me <EOS> third sentence: they didn t tell me . <EOS>
+
+> who are you ?
+= how many times have you asked me that ? how many times ? third sentence: tell me damn you !
+< we s the way we have to do you if you play in the game $ <EOS> third sentence: you don t play games ! <EOS>
+
+> this is nuts .
+= what is your problem ? third sentence: ten minutes ago i m looking forward to a quiet dinner . i get a note #
+< what is <EOS> third sentence: what ? <EOS>
+
+input = i want to go with you !
+output = get don t get to you . <EOS> third sentence: but s t ! ! ! <EOS>
+input = what are you doing ?
+output = we re going to need some time . <EOS> third sentence: who ? you think you are going to ? ? <EOS>
+input = who knows ?
+output = it # . want with you . <EOS> third sentence: no . <EOS>
+input = relax .
+output = how the can hell . after seeing you <EOS> third sentence: i know it was bad . <EOS>
+input = fuck you !
+output = yeah ? <EOS> third sentence: you re not supposed to be home ! <EOS>
+input = do you love me ?
+output = do you love me ? <EOS> third sentence: i asked . <EOS>
+input = when can we marry ?
+output = it you you and you re the know . <EOS> third sentence: but . a to <EOS>
